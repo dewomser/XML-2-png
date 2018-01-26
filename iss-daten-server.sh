@@ -35,16 +35,15 @@ s/Friday/Freitag/
 s/Saturday/Samstag/
 s/Sunday/Sonntag/
 }' > iss-daten.txt 
-else echo "NASA sendet keine Daten" > iss-daten.txt
-fi
-
-#Erzeuge aus Textdatei png-Grafik 400*400 px
-#convert -crop 200x200 -draw 'text 20,65 "@/home/karl/bin/iss-daten.txt"' iss-photo1.png iss-daten.png
-cat iss-daten.txt | convert iss-photo1.png -fill white -stroke black -pointsize 20 -gravity center -annotate 10 '@-' iss-daten.png
-# Abfrage Variable leer
+issd=$(cat iss-daten.txt)
+# Abfrage variable leer
 if [ -z "${issd}" ]; then
 issd=$(echo Gerade kein sichtbarer Überflug)
 fi
+#convert iss-photo1.png -fill white -stroke black -pointsize 20 -gravity center -annotate 10 -draw "text 32, 16 \"$issd\"" iss-daten.png
+#convert iss-photo1.png -fill black -pointsize 20 -gravity center -draw "text 0,0\"$issd\"" iss-daten.png
+convert iss-photo1.png -fill '#00688B' -weight Bold -pointsize 20 -gravity center -annotate 9 "$issd" iss-daten.png
+
 
 sleep 3
 #ftp-upload
