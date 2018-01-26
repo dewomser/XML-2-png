@@ -35,6 +35,9 @@ s/Friday/Freitag/
 s/Saturday/Samstag/
 s/Sunday/Sonntag/
 }' > iss-daten.txt 
+else echo "NASA sendet keine Daten" > iss-daten.txt
+fi
+
 issd=$(cat iss-daten.txt)
 # Abfrage variable leer
 if [ -z "${issd}" ]; then
