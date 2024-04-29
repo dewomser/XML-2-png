@@ -57,9 +57,9 @@ convert iss-photo1.png -fill '#00688B' -weight Bold -pointsize 20 -gravity cente
 
 
 
-#twittern
-#/usr/bin/perl /home/user/bin/ttytter.pl -status="Der nächste sichtbare ISS Überflug in Worms ist am: 
-http://www.domain.de/home/xml2png.html"
+#twittern  does not work anymore
+# /usr/bin/perl /home/user/bin/ttytter.pl -status="Der nächste sichtbare ISS Überflug in Worms ist am: 
+# http://www.domain.de/home/xml2png.html"
 
 #
 #exit
